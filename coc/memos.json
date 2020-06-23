@@ -737,25 +737,25 @@
       },
       {
         "architecture": 3,
-        "path": "/usr/bin/python",
+        "path": "/usr/bin/python3",
         "version": {
           "options": {
             "loose": false,
             "includePrerelease": false
           },
           "loose": false,
-          "raw": "2.7.18-candidate",
-          "major": 2,
-          "minor": 7,
-          "patch": 18,
+          "raw": "3.8.2-final",
+          "major": 3,
+          "minor": 8,
+          "patch": 2,
           "prerelease": [
-            "candidate"
+            "final"
           ],
           "build": [],
-          "version": "2.7.18-candidate"
+          "version": "3.8.2-final"
         },
         "sysPrefix": "/usr",
-        "fileHash": "c626966ffafbe6538bb33e7ba330986b7c8315d8de44c7420c9bd3ee8301c411c7ab8930925fe27a7ee83158eca5e5c1f30c448cedaadced72329e31ccc9bb65",
+        "fileHash": "d078cb1f9eb42d3d1633795e8e7d7115a128f2ef9f995760db75e6140f14ec6ac9c8a5285a61982355c6b605b18c3f323728fb967b4f9be8052bf28be01eaeac",
         "type": "Unknown"
       }
     ],
@@ -781,8 +781,7 @@
       },
       "sysPrefix": "/usr",
       "fileHash": "d078cb1f9eb42d3d1633795e8e7d7115a128f2ef9f995760db75e6140f14ec6ac9c8a5285a61982355c6b605b18c3f323728fb967b4f9be8052bf28be01eaeac",
-      "type": "Unknown",
-      "cachedEntry": true
+      "type": "Unknown"
     },
     "preferredGlobalPyInterpreter": {
       "architecture": 3,
@@ -817,9 +816,9 @@
     "/usr/bin/python3.interpreter.displayName.v7": {
       "data": {
         "displayName": "Python 3.8.2 64-bit",
-        "hash": "d078cb1f9eb42d3d1633795e8e7d7115a128f2ef9f995760db75e6140f14ec6ac9c8a5285a61982355c6b605b18c3f323728fb967b4f9be8052bf28be01eaeac-f074b0ad512a9122ce62d1929f2ab8e3"
+        "hash": "d078cb1f9eb42d3d1633795e8e7d7115a128f2ef9f995760db75e6140f14ec6ac9c8a5285a61982355c6b605b18c3f323728fb967b4f9be8052bf28be01eaeac-2da8d840d9a031e2c25f9c692654968b"
       },
-      "expiry": 1593016211593
+      "expiry": 1593029670937
     },
     "/bin/python2.interpreter.displayName.v7": {
       "data": {
@@ -857,7 +856,6 @@
       "sysPrefix": "/usr",
       "fileHash": "d078cb1f9eb42d3d1633795e8e7d7115a128f2ef9f995760db75e6140f14ec6ac9c8a5285a61982355c6b605b18c3f323728fb967b4f9be8052bf28be01eaeac",
       "type": "Unknown",
-      "cachedEntry": true,
       "displayName": "Python 3.8.2 64-bit"
     },
     "/usr/bin/python2.interpreter.Details.v7": {
@@ -915,11 +913,10 @@
           "sysPrefix": "/usr",
           "fileHash": "d078cb1f9eb42d3d1633795e8e7d7115a128f2ef9f995760db75e6140f14ec6ac9c8a5285a61982355c6b605b18c3f323728fb967b4f9be8052bf28be01eaeac",
           "type": "Unknown",
-          "displayName": "Python 3.8.2 64-bit",
-          "__store": true
+          "displayName": "Python 3.8.2 64-bit"
         }
       },
-      "expiry": 1593016211578
+      "expiry": 1593029670957
     },
     "/bin/python2.interpreter.Details.v7": {
       "data": {
@@ -1256,7 +1253,7 @@
     },
     "InterpreterAutoSeletionRule-workspaceEnvs": {
       "architecture": 3,
-      "path": "/home/emi/Documents/hackthissite/programming/3/env/bin/python3",
+      "path": "/home/emi/Documents/hackthissite/programming/2/env/bin/python3",
       "version": {
         "options": {
           "loose": false,
@@ -1273,8 +1270,8 @@
         "build": [],
         "version": "3.8.2-final"
       },
-      "sysPrefix": "/home/emi/Documents/hackthissite/programming/3/env",
-      "fileHash": "288496890176fe5544639e24af4b43909158e1614c70805748094dc7f1669355509b1d65984206a5bfee5344a98d358b12f3b57fae9d8d3e4341714e77a11339",
+      "sysPrefix": "/home/emi/Documents/hackthissite/programming/2/env",
+      "fileHash": "0fd2abb6bf8100824fc2a6d266bf7622f9d9c134515423cd76a711b6310761301afabab31c4f7ede66679ca845b474d9f512542747248e1cd5fa70dcb4585c98",
       "envName": "env",
       "type": "Venv"
     },
@@ -1301,7 +1298,7 @@
         "sysPrefix": "/home/emi/Documents/hackthissite/programming/2/env",
         "fileHash": "0fd2abb6bf8100824fc2a6d266bf7622f9d9c134515423cd76a711b6310761301afabab31c4f7ede66679ca845b474d9f512542747248e1cd5fa70dcb4585c98"
       },
-      "expiry": 1592672876597
+      "expiry": 1593030014295
     },
     "/home/emi/Documents/hackthissite/programming/2/env/bin/python3.v3": {
       "data": {
@@ -1326,20 +1323,20 @@
         "sysPrefix": "/home/emi/Documents/hackthissite/programming/2/env",
         "fileHash": "0fd2abb6bf8100824fc2a6d266bf7622f9d9c134515423cd76a711b6310761301afabab31c4f7ede66679ca845b474d9f512542747248e1cd5fa70dcb4585c98"
       },
-      "expiry": 1592672876596
+      "expiry": 1593030014294
     },
     "/home/emi/Documents/hackthissite/programming/2/env/bin/python.interpreter.displayName.v7": {
       "data": {
-        "displayName": "Python 3.8.2 64-bit",
-        "hash": "0fd2abb6bf8100824fc2a6d266bf7622f9d9c134515423cd76a711b6310761301afabab31c4f7ede66679ca845b474d9f512542747248e1cd5fa70dcb4585c98-d0ff85f2f101ed07cec6dba649a2d85a"
+        "displayName": "Python 3.8.2 64-bit ('env': venv)",
+        "hash": "0fd2abb6bf8100824fc2a6d266bf7622f9d9c134515423cd76a711b6310761301afabab31c4f7ede66679ca845b474d9f512542747248e1cd5fa70dcb4585c98-5c64c58b55fa3e7892faf03100ae4e0a"
       },
-      "expiry": 1592681586162
+      "expiry": 1593030039732
     },
     "/home/emi/Documents/hackthissite/programming/2/env/bin/python3.interpreter.Details.v7": {
       "data": {
         "fileHash": "0fd2abb6bf8100824fc2a6d266bf7622f9d9c134515423cd76a711b6310761301afabab31c4f7ede66679ca845b474d9f512542747248e1cd5fa70dcb4585c98"
       },
-      "expiry": 1592672876614
+      "expiry": 1593030014313
     },
     "/home/emi/Documents/hackthissite/programming/2/env/bin/python.interpreter.Details.v7": {
       "data": {
@@ -1365,18 +1362,19 @@
           },
           "sysPrefix": "/home/emi/Documents/hackthissite/programming/2/env",
           "fileHash": "0fd2abb6bf8100824fc2a6d266bf7622f9d9c134515423cd76a711b6310761301afabab31c4f7ede66679ca845b474d9f512542747248e1cd5fa70dcb4585c98",
-          "type": "Unknown",
-          "displayName": "Python 3.8.2 64-bit"
+          "envName": "env",
+          "type": "Venv",
+          "displayName": "Python 3.8.2 64-bit ('env': venv)"
         }
       },
-      "expiry": 1592681586193
+      "expiry": 1593030039762
     },
     "/home/emi/Documents/hackthissite/programming/2/env/bin/python3.interpreter.displayName.v7": {
       "data": {
         "displayName": "Python 3.8.2 64-bit ('env': venv)",
         "hash": "0fd2abb6bf8100824fc2a6d266bf7622f9d9c134515423cd76a711b6310761301afabab31c4f7ede66679ca845b474d9f512542747248e1cd5fa70dcb4585c98-283f5b3bbcf465d368a774c222be9f58"
       },
-      "expiry": 1592672876647
+      "expiry": 1593030014348
     },
     "/home/emi/Documents/hackthissite/programming/3/env/bin/python3.v3": {
       "data": {
@@ -1401,7 +1399,7 @@
         "sysPrefix": "/home/emi/Documents/hackthissite/programming/3/env",
         "fileHash": "288496890176fe5544639e24af4b43909158e1614c70805748094dc7f1669355509b1d65984206a5bfee5344a98d358b12f3b57fae9d8d3e4341714e77a11339"
       },
-      "expiry": 1592946853996
+      "expiry": 1593034131101
     },
     "/home/emi/Documents/hackthissite/programming/3/env/bin/python.v3": {
       "data": {
@@ -1468,16 +1466,40 @@
     },
     "/home/emi/Documents/hackthissite/programming/3/env/bin/python3.interpreter.Details.v7": {
       "data": {
-        "fileHash": "288496890176fe5544639e24af4b43909158e1614c70805748094dc7f1669355509b1d65984206a5bfee5344a98d358b12f3b57fae9d8d3e4341714e77a11339"
+        "fileHash": "288496890176fe5544639e24af4b43909158e1614c70805748094dc7f1669355509b1d65984206a5bfee5344a98d358b12f3b57fae9d8d3e4341714e77a11339",
+        "info": {
+          "architecture": 3,
+          "path": "/home/emi/Documents/hackthissite/programming/3/env/bin/python3",
+          "version": {
+            "options": {
+              "loose": false,
+              "includePrerelease": false
+            },
+            "loose": false,
+            "raw": "3.8.2-final",
+            "major": 3,
+            "minor": 8,
+            "patch": 2,
+            "prerelease": [
+              "final"
+            ],
+            "build": [],
+            "version": "3.8.2-final"
+          },
+          "sysPrefix": "/home/emi/Documents/hackthissite/programming/3/env",
+          "fileHash": "288496890176fe5544639e24af4b43909158e1614c70805748094dc7f1669355509b1d65984206a5bfee5344a98d358b12f3b57fae9d8d3e4341714e77a11339",
+          "type": "Unknown",
+          "displayName": "Python 3.8.2 64-bit"
+        }
       },
-      "expiry": 1592946854443
+      "expiry": 1593032817196
     },
     "/home/emi/Documents/hackthissite/programming/3/env/bin/python3.interpreter.displayName.v7": {
       "data": {
-        "displayName": "Python 3.8.2 64-bit ('env': venv)",
-        "hash": "288496890176fe5544639e24af4b43909158e1614c70805748094dc7f1669355509b1d65984206a5bfee5344a98d358b12f3b57fae9d8d3e4341714e77a11339-4e9d324fc01f2b9dbeb4065700c9a2bd"
+        "displayName": "Python 3.8.2 64-bit",
+        "hash": "288496890176fe5544639e24af4b43909158e1614c70805748094dc7f1669355509b1d65984206a5bfee5344a98d358b12f3b57fae9d8d3e4341714e77a11339-2714f21a53136b69623aa5c9cc5228ac"
       },
-      "expiry": 1592946854467
+      "expiry": 1593032681411
     }
   },
   "coc-python|/home/emi/Pictures/model_sort/missingdate/image/jpeg-ferdig": {
@@ -2061,7 +2083,7 @@
         "type": "Venv"
       }
     ],
-    "SelectedPythonPath": "/home/emi/Documents/hackthissite/programming/2/env/bin/python3"
+    "SelectedPythonPath": "/usr/bin/python3"
   },
   "coc-python|/home/emi/Documents/hackthissite/programming/3": {
     "INTERPRETERS_CACHE_v3_PipEnvService:1636b88c99c0b5469066279c8476dbda": [],
@@ -2224,6 +2246,35 @@
         "type": "Venv"
       }
     ],
-    "SelectedPythonPath": "/home/emi/Documents/hackthissite/programming/3/env/bin/python3"
+    "SelectedPythonPath": "/usr/bin/python3"
+  },
+  "coc-python|/home/emi/Documents/hackthissite/programming": {
+    "INTERPRETERS_CACHE_v3_PipEnvService:e7d2d54f778105995a6792ffc1a3150c": [],
+    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService:e7d2d54f778105995a6792ffc1a3150c": [],
+    "autoSelectedWorkspacePythonInterpreter-/home/emi/Documents/hackthissite/programming": {
+      "architecture": 3,
+      "path": "/usr/bin/python3",
+      "version": {
+        "options": {
+          "loose": false,
+          "includePrerelease": false
+        },
+        "loose": false,
+        "raw": "3.8.2-final",
+        "major": 3,
+        "minor": 8,
+        "patch": 2,
+        "prerelease": [
+          "final"
+        ],
+        "build": [],
+        "version": "3.8.2-final"
+      },
+      "sysPrefix": "/usr",
+      "fileHash": "d078cb1f9eb42d3d1633795e8e7d7115a128f2ef9f995760db75e6140f14ec6ac9c8a5285a61982355c6b605b18c3f323728fb967b4f9be8052bf28be01eaeac",
+      "type": "Unknown"
+    },
+    "INTERPRETERS_CACHE_v3_PipEnvService": [],
+    "INTERPRETERS_CACHE_v3_WorkspaceVirtualEnvService": []
   }
 }

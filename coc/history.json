@@ -11,7 +11,13 @@
       "config%2Fnvim": [
         "format"
       ]
-    }
+    },
+    "%2Fhome%2Femi%2FDocuments%2Fhackthissite%2Fprogramming%2F3": [
+      "fo"
+    ],
+    "%2Fhome%2Femi%2FDocuments%2Fhackthissite%2Fprogramming%2F3%2Fplayground%2FHTSmission3": [
+      "python"
+    ]
   },
   "lists": {
     "%2Fhome%2Femi%2F": {
@@ -24,11 +30,29 @@
     ],
     "%2Fhome%2Femi%2FDocuments%2Fhackthissite%2Fprogramming%2F12": [
       "exte"
+    ],
+    "%2Fhome%2Femi%2FDocuments%2Fhackthissite%2Fprogramming%2F3%2Fplayground%2FHTSmission3": [
+      "mark"
     ]
   },
   "extensions": {
     "%2Fhome%2Femi%2FDocuments%2Fscraper_brettboka": [
       ":"
+    ]
+  },
+  "marketplace": {
+    "%2Fhome%2Femi%2FDocuments%2Fhackthissite%2Fprogramming%2F1": [
+      "python"
+    ],
+    "%2Fhome%2Femi": [
+      "pyhon"
+    ],
+    "%2Fhome%2Femi%2FDocuments%2Fdino": [
+      "tsser",
+      "coc-deno"
+    ],
+    "%2Fhome%2Femi%2FDocuments%2Fhackthissite%2Fprogramming%2F3%2Fplayground%2FHTSmission3": [
+      "python"
     ]
   }
 }
