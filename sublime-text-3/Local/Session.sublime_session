@@ -1,0 +1,409 @@
+{
+	"folder_history":
+	[
+		"/home/emi/Documents/hackthissite/programming/3/playground/HTSmission3"
+	],
+	"last_version": 3211,
+	"last_window_id": 4,
+	"log_indexing": false,
+	"settings":
+	{
+		"new_window_height": 0.0,
+		"new_window_settings":
+		{
+			"auto_complete":
+			{
+				"selected_items":
+				[
+				]
+			},
+			"build_system_choices":
+			[
+			],
+			"build_varint": "",
+			"command_palette":
+			{
+				"height": 0.0,
+				"last_filter": "",
+				"selected_items":
+				[
+				],
+				"width": 0.0
+			},
+			"console":
+			{
+				"height": 0.0,
+				"history":
+				[
+				]
+			},
+			"distraction_free":
+			{
+				"menu_visible": true,
+				"show_minimap": false,
+				"show_open_files": false,
+				"show_tabs": false,
+				"side_bar_visible": false,
+				"status_bar_visible": false
+			},
+			"file_history":
+			[
+			],
+			"find":
+			{
+				"height": 24.0
+			},
+			"find_in_files":
+			{
+				"height": 0.0,
+				"where_history":
+				[
+				]
+			},
+			"find_state":
+			{
+				"case_sensitive": false,
+				"find_history":
+				[
+					"hello",
+					");\n"
+				],
+				"highlight": true,
+				"in_selection": false,
+				"preserve_case": false,
+				"regex": false,
+				"replace_history":
+				[
+				],
+				"reverse": false,
+				"show_context": true,
+				"use_buffer2": true,
+				"whole_word": false,
+				"wrap": true
+			},
+			"incremental_find":
+			{
+				"height": 24.0
+			},
+			"input":
+			{
+				"height": 0.0
+			},
+			"menu_visible": true,
+			"output.find_results":
+			{
+				"height": 0.0
+			},
+			"pinned_build_system": "",
+			"replace":
+			{
+				"height": 44.0
+			},
+			"save_all_on_build": true,
+			"select_file":
+			{
+				"height": 0.0,
+				"last_filter": "",
+				"selected_items":
+				[
+				],
+				"width": 0.0
+			},
+			"select_project":
+			{
+				"height": 0.0,
+				"last_filter": "",
+				"selected_items":
+				[
+				],
+				"width": 0.0
+			},
+			"select_symbol":
+			{
+				"height": 0.0,
+				"last_filter": "",
+				"selected_items":
+				[
+				],
+				"width": 0.0
+			},
+			"show_minimap": true,
+			"show_open_files": false,
+			"show_tabs": true,
+			"side_bar_visible": true,
+			"side_bar_width": 150.0,
+			"status_bar_visible": true,
+			"template_settings":
+			{
+			}
+		},
+		"new_window_width": 0.0
+	},
+	"windows":
+	[
+		{
+			"auto_complete":
+			{
+				"selected_items":
+				[
+				]
+			},
+			"buffers":
+			[
+				{
+					"contents": "\nimport hashlib\n\nencrypted = raw_input('Enter Encrypted String: ')\n\t\t\nelist = []\nelist = encrypted.split(' ')\n\ncharacters = [ 'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','0','1','2','3','4','5','6','7','8','9' ]\nhex_chars = ['a','b','c','d','e','f','0','1','2','3','4','5','6','7','8','9' ]\n\t\ndef Sum(hex):\n\thex_list = list(hex)\n\tsum = 0\n\tfor element in hex_list:\n\t\tsum += int(element,16)\n\treturn sum\n\t\ndef MD5_Hash(string1):\n\tm = hashlib.md5()\n\tm.update(str(string1))\n\treturn m.hexdigest()\n\ndef SpecialChar(location): #These characters are the same for each serial\n\tif(location%20 == 19):\n\t\treturn \"\\n\"\n\telif((location%20 == 3) or (location%20 == 7) or (location%20 == 11) or (location%20 == 15)):\n\t\treturn \"-\"\n\telif(location%20 == 8):\n\t\treturn \"O\"\n\telif(location%20==9):\n\t\treturn \"E\"\n\telif(location%20==10):\n\t\treturn \"M\"\n\telif((location%20 == 18) or (location%20==16)):\n\t\treturn \"1\"\n\telif(location%20==17):\n\t\treturn \".\"\n\telse:\n\t\treturn \"0\"\n\t\n#passhash_guess is pass_guess array\n#elist is an array of the nums in encrypted string\n#times_run is the intMD5Total for the times_run'th character in the serial\ndef Total(str_guess, passhash_guess, previous, times_run):\n\tif(times_run == 0):\n\t\tintTotal = ord(str(str_guess)[0:1]) - int(elist[times_run]) + int(passhash_guess,16)\n\t\treturn intTotal\n\telse:\n\t\treturn Sum(str(MD5_Hash(str_guess[:(times_run+1)]))[0:16] + str(MD5_Hash(previous))[0:16])\n\t\t\n\n\ndef Find_Possible():\n\tfor j in range(len(hex_chars)):\n\t\tfor i in range(len(characters)):\n\t\t\tprint(\"hello\")\n\t\t\tif(((ord(characters[i]) + int(hex_chars[j],16) - Total(characters[i], hex_chars[j],0, 0)) == int(elist[0]))):\n\t\t\t\tprint(\"bye\")\n\t\t\t\tintTotal = Total(characters[i], hex_chars[j],Total(characters[i], hex_chars[j],0, 0), 1)\n\t\t\t\tif(HashCalculate(characters[i],1, str(hex_chars[j]),intTotal) != \"0\"):\n\t\t\t\t\treturn 1\n\t\t\t\t\t\t\t\t\t\t\n\treturn 0\n\ndef HashCalculate(char_guess,depth,hash_string,total):\n\tif(depth > 99):\n\t\tprint \"Found!\" + str(char_guess)\n\t\treturn str(char_guess)\n\telif(depth > 31): #Once we get to the 32nd loop, we have the MD5 hash of the password and only need to bruteforce the unencrypted string\n\t\tif(SpecialChar(depth) != \"0\"):\n\t\t\t\tintTotal = Total(char_guess+SpecialChar(depth), hash_string[0:1],total, depth+1)\n\t\t\t\tstrDone = HashCalculate(char_guess+SpecialChar(depth),depth+1,hash_string,intTotal)\n\t\t\t\treturn strDone\n\t\telse:\t\n\t\t\tfor i in range(len(characters)):\n\t\t\t\tif((ord(characters[i]) + int(hash_string[(depth%32):(depth%32+1)],16) - total) == int(elist[depth])):\n\t\t\t\t\tintTotal = Total(char_guess+characters[i], hash_string[0:1],total, depth+1)\n\t\t\t\t\tstrDone = HashCalculate(char_guess+characters[i],depth+1,hash_string,intTotal)\n\t\t\t\t\tif(strDone != \"0\"):\n\t\t\t\t\t\treturn strDone\n\t\treturn \"0\"\n\n\telse:\n\t\tfor j in range(len(hex_chars)):\n\t\t\tif(SpecialChar(depth) != \"0\"):\n\t\t\t\tif((ord(SpecialChar(depth)) + int(hex_chars[j],16) - total) == int(elist[depth])):\n\t\t\t\t\tintTotal = Total(char_guess+SpecialChar(depth), hash_string[0:1],total, depth+1)\n\t\t\t\t\tstrDone = HashCalculate(char_guess+SpecialChar(depth),depth+1,hash_string+hex_chars[j],intTotal)\n\t\t\t\t\tif(strDone != \"0\"):\n\t\t\t\t\t\treturn strDone\n\t\t\telse:\t\n\t\t\t\tfor i in range(len(characters)):\n\t\t\t\t\tif((ord(characters[i]) + int(hex_chars[j],16) - total) == int(elist[depth])):\n\t\t\t\t\t\tintTotal = Total(char_guess+characters[i], hash_string[0:1],total, depth+1)\n\t\t\t\t\t\tstrDone = HashCalculate(char_guess+characters[i],depth+1,hash_string+hex_chars[j],intTotal)\n\t\t\t\t\t\tif(strDone != \"0\"):\n\t\t\t\t\t\t\treturn strDone\n\t\t\n\treturn \"0\"\nFind_Possible()\n\n\n\t\t\t\t\t",
+					"file": "/home/emi/Documents/hackthissite/programming/3/playground/HTSmission3/mission3.py",
+					"file_size": 3560,
+					"file_write_time": 132372207511553696,
+					"settings":
+					{
+						"buffer_size": 3560,
+						"encoding": "UTF-8",
+						"line_ending": "Unix"
+					}
+				},
+				{
+					"contents": "j",
+					"file": "/home/emi/Documents/hackthissite/programming/3/playground/HTSmission3/.gitignore",
+					"file_size": 303,
+					"file_write_time": 132371649844254900,
+					"settings":
+					{
+						"buffer_size": 1,
+						"line_ending": "Unix"
+					}
+				}
+			],
+			"build_system": "",
+			"build_system_choices":
+			[
+			],
+			"build_varint": "",
+			"command_palette":
+			{
+				"height": 0.0,
+				"last_filter": "",
+				"selected_items":
+				[
+				],
+				"width": 0.0
+			},
+			"console":
+			{
+				"height": 0.0,
+				"history":
+				[
+				]
+			},
+			"distraction_free":
+			{
+				"menu_visible": true,
+				"show_minimap": false,
+				"show_open_files": false,
+				"show_tabs": false,
+				"side_bar_visible": false,
+				"status_bar_visible": false
+			},
+			"expanded_folders":
+			[
+				"/home/emi/Documents/hackthissite/programming/3/playground/HTSmission3"
+			],
+			"file_history":
+			[
+			],
+			"find":
+			{
+				"height": 24.0
+			},
+			"find_in_files":
+			{
+				"height": 0.0,
+				"where_history":
+				[
+				]
+			},
+			"find_state":
+			{
+				"case_sensitive": false,
+				"find_history":
+				[
+				],
+				"highlight": true,
+				"in_selection": false,
+				"preserve_case": false,
+				"regex": false,
+				"replace_history":
+				[
+				],
+				"reverse": false,
+				"show_context": true,
+				"use_buffer2": true,
+				"whole_word": false,
+				"wrap": true
+			},
+			"folders":
+			[
+				{
+					"path": "/home/emi/Documents/hackthissite/programming/3/playground/HTSmission3"
+				}
+			],
+			"groups":
+			[
+				{
+					"selected": 1,
+					"sheets":
+					[
+						{
+							"buffer": 0,
+							"file": "/home/emi/Documents/hackthissite/programming/3/playground/HTSmission3/mission3.py",
+							"semi_transient": false,
+							"settings":
+							{
+								"buffer_size": 3560,
+								"regions":
+								{
+								},
+								"selection":
+								[
+									[
+										1885,
+										1885
+									]
+								],
+								"settings":
+								{
+									"syntax": "Packages/Python/Python.sublime-syntax",
+									"translate_tabs_to_spaces": false
+								},
+								"translation.x": 0.0,
+								"translation.y": 720.0,
+								"zoom_level": 1.0
+							},
+							"stack_index": 1,
+							"type": "text"
+						},
+						{
+							"buffer": 1,
+							"file": "/home/emi/Documents/hackthissite/programming/3/playground/HTSmission3/.gitignore",
+							"semi_transient": false,
+							"settings":
+							{
+								"buffer_size": 1,
+								"regions":
+								{
+								},
+								"selection":
+								[
+									[
+										1,
+										1
+									]
+								],
+								"settings":
+								{
+									"syntax": "Packages/Git Formats/Git Ignore.sublime-syntax"
+								},
+								"translation.x": 0.0,
+								"translation.y": 0.0,
+								"zoom_level": 1.0
+							},
+							"stack_index": 0,
+							"type": "text"
+						}
+					]
+				}
+			],
+			"incremental_find":
+			{
+				"height": 24.0
+			},
+			"input":
+			{
+				"height": 0.0
+			},
+			"layout":
+			{
+				"cells":
+				[
+					[
+						0,
+						0,
+						1,
+						1
+					]
+				],
+				"cols":
+				[
+					0.0,
+					1.0
+				],
+				"rows":
+				[
+					0.0,
+					1.0
+				]
+			},
+			"menu_visible": true,
+			"output.find_results":
+			{
+				"height": 0.0
+			},
+			"pinned_build_system": "",
+			"position": "0,0,0,0,0,1920,30,3600,1056,3600,1080",
+			"project": "",
+			"replace":
+			{
+				"height": 44.0
+			},
+			"save_all_on_build": true,
+			"select_file":
+			{
+				"height": 0.0,
+				"last_filter": "",
+				"selected_items":
+				[
+				],
+				"width": 0.0
+			},
+			"select_project":
+			{
+				"height": 0.0,
+				"last_filter": "",
+				"selected_items":
+				[
+				],
+				"width": 0.0
+			},
+			"select_symbol":
+			{
+				"height": 0.0,
+				"last_filter": "",
+				"selected_items":
+				[
+				],
+				"width": 0.0
+			},
+			"selected_group": 0,
+			"settings":
+			{
+			},
+			"show_minimap": true,
+			"show_open_files": false,
+			"show_tabs": true,
+			"side_bar_visible": true,
+			"side_bar_width": 164.0,
+			"status_bar_visible": true,
+			"template_settings":
+			{
+			},
+			"window_id": 4,
+			"workspace_name": ""
+		}
+	],
+	"workspaces":
+	{
+		"recent_workspaces":
+		[
+		]
+	}
+}

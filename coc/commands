@@ -1,0 +1,5 @@
+python.setInterpreter
+python.jediEnabled
+workspace.showOutput
+python.sortImports
+python.execInTerminal
