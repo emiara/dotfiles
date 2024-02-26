@@ -1,6 +1,0 @@
-python.setInterpreter
-python.setLinter
-python.jediEnabled
-workspace.showOutput
-python.sortImports
-python.execInTerminal
