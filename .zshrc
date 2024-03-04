@@ -108,6 +108,6 @@ alias alacrittyrc="nvim ~/.config/alacritty/alacritty.toml && alacritty --restar
 alias brewup="brew update && brew upgrade && brew cleanup && brew doctor"
 
 alias ls="lsd"
-# alias ll="lsd -al" 
-# alias l="lsd -a" 
+alias ll="lsd -al" 
+alias l="lsd -a" 
 
