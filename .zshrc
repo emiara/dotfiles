@@ -99,8 +99,12 @@ bindkey -v # Vim mode
 eval "$(zoxide init --cmd cd zsh)"
 
 # Example aliases
+alias vim="nvim"
 alias zshrc="nvim ~/.zshrc && source ~/.zshrc"
+alias vimrc="nvim ~/.config/nvim/init.lua"
 alias tmuxrc="nvim ~/.config/tmux/tmux.conf && tmux source-file ~/.config/tmux/tmux.conf"
+alias yabairc="nvim ~/.config/yabai/yabairc && yabai --restart-service"
+alias alacrittyrc="nvim ~/.config/alacritty/alacritty.toml && alacritty --restart-service"
+alias brewup="brew update && brew upgrade && brew cleanup && brew doctor"
 
-alias brewup="brew update && brew upgrade"
 
