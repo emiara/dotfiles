@@ -107,4 +107,7 @@ alias yabairc="nvim ~/.config/yabai/yabairc && yabai --restart-service"
 alias alacrittyrc="nvim ~/.config/alacritty/alacritty.toml && alacritty --restart-service"
 alias brewup="brew update && brew upgrade && brew cleanup && brew doctor"
 
+alias ls="lsd"
+# alias ll="lsd -al" 
+# alias l="lsd -a" 
 
