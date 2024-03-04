@@ -99,6 +99,7 @@ bindkey -v # Vim mode
 eval "$(zoxide init --cmd cd zsh)"
 
 # Example aliases
+alias reset="FUCK YOU!"
 alias vim="nvim"
 alias zshrc="nvim ~/.zshrc && source ~/.zshrc"
 alias vimrc="nvim ~/.config/nvim/init.lua"
@@ -110,4 +111,3 @@ alias brewup="brew update && brew upgrade && brew cleanup && brew doctor"
 alias ls="lsd"
 alias ll="lsd -al" 
 alias l="lsd -a" 
-
