@@ -1,4 +1,3 @@
-neofetch
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -98,6 +97,10 @@ source $ZSH/oh-my-zsh.sh
 bindkey -v # Vim mode
 eval "$(zoxide init --cmd cd zsh)"
 
+# pyenv setup
+ if command -v pyenv 1>/dev/null 2>&1; then
+                         eval "$(pyenv init -)"
+                      fi
 # Example aliases
 alias reset="FUCK YOU!"
 alias vim="nvim"
@@ -106,12 +109,15 @@ alias vimrc="nvim ~/.config/nvim/init.lua"
 alias tmuxrc="nvim ~/.config/tmux/tmux.conf && tmux source-file ~/.config/tmux/tmux.conf"
 alias yabairc="nvim ~/.config/yabai/yabairc && yabai --restart-service"
 alias alacrittyrc="nvim ~/.config/alacritty/alacritty.toml && alacritty --restart-service"
-alias brewup="brew update && brew upgrade && brew cleanup && brew doctor"
+alias brewup="brew update && brew upgrade && brew cleanup && brew doctor && clear"
 alias swayrc="nvim ~/.config/sway/config && swaymsg reload"
 alias update="sudo pacman -Syu && yay -Syu && clear"
+alias neofetch="clear && neofetch"
+alias nf="clear && neofetch"
 
 alias ls="lsd"
 alias ll="lsd -al" 
 alias l="lsd -a" 
 alias lg="lazygit"
 alias tre="lsd --tree"
+neofetch
