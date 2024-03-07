@@ -93,8 +93,12 @@ source $ZSH/oh-my-zsh.sh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 
+# Vim mode
+bindkey -v 
+bindkey -M vicmd v edit-command-line
 
-bindkey -v # Vim mode
+
+
 eval "$(zoxide init --cmd cd zsh)"
 
 # pyenv setup
