@@ -107,7 +107,7 @@ alias tmuxrc="nvim ~/.config/tmux/tmux.conf && tmux source-file ~/.config/tmux/t
 alias yabairc="nvim ~/.config/yabai/yabairc && yabai --restart-service"
 alias alacrittyrc="nvim ~/.config/alacritty/alacritty.toml && alacritty --restart-service"
 alias brewup="brew update && brew upgrade && brew cleanup && brew doctor"
-alias swayrc="nvim ~/.config/sway/config && swaymsg reload"
+alias swayrc="nvim ~/.config/sway/ && swaymsg reload"
 alias update="sudo pacman -Syu && yay -Syu && clear"
 
 alias ls="lsd"
