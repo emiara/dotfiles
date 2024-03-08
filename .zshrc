@@ -108,12 +108,16 @@ eval "$(zoxide init --cmd cd zsh)"
 # Example aliases
 alias reset="FUCK YOU!"
 alias vim="nvim"
+
+
+# RCs
 alias zshrc="nvim ~/.zshrc && source ~/.zshrc"
 alias vimrc="cd ~/.config/nvim/ && nvim ~/.config/nvim/init.lua && cd -"
 alias tmuxrc="nvim ~/.config/tmux/tmux.conf && tmux source-file ~/.config/tmux/tmux.conf"
 alias yabairc="nvim ~/.config/yabai/yabairc && yabai --restart-service"
 alias alacrittyrc="nvim ~/.config/alacritty/alacritty.toml && alacritty --restart-service"
 alias swayrc="nvim ~/.config/sway/ && swaymsg reload"
+
 alias brewup="brew update && brew upgrade && brew cleanup && brew doctor && clear"
 alias update="sudo pacman -Syu && yay -Syu && clear"
 alias neofetch="clear && neofetch"
