@@ -123,9 +123,11 @@ alias update="sudo pacman -Syu && yay -Syu && clear"
 alias neofetch="clear && neofetch"
 alias nf="clear && neofetch"
 
+
 alias ls="lsd"
 alias ll="lsd -al" 
 alias l="lsd -a" 
 alias lg="lazygit"
 alias tre="lsd --tree"
 neofetch
+
