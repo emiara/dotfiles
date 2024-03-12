@@ -122,6 +122,7 @@ alias brewup="brew update && brew upgrade && brew cleanup && brew doctor && clea
 alias update="sudo pacman -Syu && yay -Syu && clear"
 alias neofetch="clear && neofetch"
 alias nf="clear && neofetch"
+alias ta="tmux attach-session -t $(tmux list sessions | awk '{print $1}' | head -n 1) || tmux new-session"
 
 alias ls="lsd"
 alias ll="lsd -al" 
