@@ -3,6 +3,7 @@
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
+export PATH=$PATH:/Users/emi/.local/bin/
 
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="robbyrussell"
@@ -123,6 +124,7 @@ alias update="sudo pacman -Syu && yay -Syu && clear"
 alias neofetch="clear && neofetch"
 alias nf="clear && neofetch"
 alias ta="tmux attach-session -t $(tmux list sessions | awk '{print $1}' | head -n 1) || tmux new-session"
+alias slash="~/Documents/slash/slash.sh"
 
 
 alias ls="lsd"
