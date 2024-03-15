@@ -128,8 +128,8 @@ alias ta="tmux attach-session -t $(tmux list sessions | awk '{print $1}' | head 
 
 
 alias ls="lsd"
-alias ll="lsd -Al" 
-alias l="lsd -A" 
+alias ll="lsd -l" 
+alias l="lsd -Al" 
 alias tre="lsd --tree"
 neofetch
 
