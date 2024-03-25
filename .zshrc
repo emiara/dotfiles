@@ -3,7 +3,17 @@
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
-export PATH=$PATH:/Users/emi/.local/bin/
+
+ # for macOS
+if [[ $(uname) == "Darwin" ]]; then
+  export PATH=$PATH:/Users/emi/.local/bin/
+fi
+
+# for Linux
+if [[ $(uname) == "Linux" ]]; then
+  export PATH=$PATH:/home/emiara/.local/bin/
+fi
+
 
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="robbyrussell"
@@ -23,7 +33,7 @@ ZSH_THEME="robbyrussell"
 
 # Uncomment one of the following lines to change the auto-update behavior
 # zstyle ':omz:update' mode disabled  # disable automatic updates
-# zstyle ':omz:update' mode auto      # update automatically without asking
+ zstyle ':omz:update' mode auto      # update automatically without asking
 # zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 
 # Uncomment the following line to change how often to auto-update (in days).
@@ -107,8 +117,9 @@ eval "$(zoxide init --cmd cd zsh)"
                          eval "$(pyenv init -)"
                       fi
 # Example aliases
-alias reset="FUCK YOU!"
+alias reset="echo FUCK YOU!"
 alias vim="nvim"
+alias svim="sudoedit"
 
 
 # RCs
@@ -117,10 +128,11 @@ alias vimrc="cd ~/.config/nvim/ && nvim ~/.config/nvim/init.lua && cd -"
 alias tmuxrc="nvim ~/.config/tmux/tmux.conf && tmux source-file ~/.config/tmux/tmux.conf"
 alias yabairc="nvim ~/.config/yabai/yabairc && yabai --restart-service"
 alias alacrittyrc="nvim ~/.config/alacritty/alacritty.toml && alacritty --restart-service"
-alias swayrc="nvim ~/.config/sway/ && swaymsg reload"
+alias swayrc="nvim ~/.config/sway/config && swaymsg reload"
 
 alias brewup="brew update && brew upgrade && brew cleanup && brew doctor && clear"
 alias update="sudo pacman -Syu && yay -Syu && clear"
+alias bye="systemctl hibernate"
 alias neofetch="clear && neofetch"
 alias nf="clear && neofetch"
 alias lg="lazygit"
