@@ -115,7 +115,9 @@ alias vim="nvim"
 alias zshrc="nvim ~/.zshrc && source ~/.zshrc"
 alias vimrc="cd ~/.config/nvim/ && nvim ~/.config/nvim/init.lua && cd -"
 alias tmuxrc="nvim ~/.config/tmux/tmux.conf && tmux source-file ~/.config/tmux/tmux.conf"
+
 alias yabairc="nvim ~/.config/yabai/yabairc && yabai --restart-service"
+alias xkhdrc="nvim ~/.config/skhd/config"
 alias alacrittyrc="nvim ~/.config/alacritty/alacritty.toml && alacritty --restart-service"
 alias swayrc="nvim ~/.config/sway/ && swaymsg reload"
 
