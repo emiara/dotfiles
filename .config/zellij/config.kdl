@@ -1,0 +1,357 @@
+// TODO:
+// Goal: Make a custom, fast, smooth, and beautiful development environment in seconds
+// Idea: Make this config downloadable from github and launchable with a single command from any machine
+// Add zellij-forgot
+// Add zbj?
+// Look at other plugins that can be useful for workflow
+// Define own modes and binds
+// Define layouts, streamline autorunning commands. Bind in vim to autorun? Autorun on change?
+// Swap layout with "runner" pane, integrate this layout with neovim
+
+keybinds clear-defaults=true {
+
+    ////////// locked mode: ctrl+g //////////
+
+    // This mode serves as the safe mode. It completely avoids conflicting binds, except Ctrl+g.
+
+    // Ctrl+g -> Change to normal mode
+
+    locked {
+        bind "Ctrl g" { SwitchToMode "Normal"; }
+    }
+
+
+    ////////// normal mode //////////
+
+    // This mode serves as the default mode. It has quick binds for changing
+    // tabs, panes and running code, but tries to avoid conflicting binds.
+
+    // Ctrl+g -> Change to locked mode
+    // Ctrl+b -> Change to tmux mode
+    // Alt+hjkl -> Change pane focus
+
+    normal {
+        bind "Ctrl q" { GoToPreviousTab; }
+        bind "Ctrl e" { GoToNextTab; }
+
+        bind "Alt h" { MoveFocusOrTab "Left"; }
+        bind "Alt l" { MoveFocusOrTab "Right"; }
+        bind "Alt j" { MoveFocus "Down"; }
+        bind "Alt k" { MoveFocus "Up"; }
+        bind "Alt 1" { GoToTab 1; }
+        bind "Alt 2" { GoToTab 2; }
+        bind "Alt 3" { GoToTab 3; }
+        bind "Alt 4" { GoToTab 4; }
+        bind "Alt 5" { GoToTab 5; }
+        bind "Alt 6" { GoToTab 6; }
+        bind "Alt 7" { GoToTab 7; }
+        bind "Alt 8" { GoToTab 8; }
+        bind "Alt 9" { GoToTab 9; }
+
+        bind "Alt f" { ToggleFocusFullscreen; }
+
+        // TODO:
+        // Create runner binds
+    }
+
+
+
+    ////////// tmux mode: Ctrl+b //////////
+    ///// ( Eventually Ctrl+Space ) ///////
+
+    // This mode serves as the modifying mode. It is meant to do simple, quick changes to the setup.
+    // It does not return to normal mode by itself. It is meant as an editing mode, which is exited
+    // once the setup is configured to my liking.
+
+    tmux {
+        ////////// MODES \\\\\\\\\\
+        bind "Ctrl q" { Quit; }
+
+        bind "f" { ToggleFocusFullscreen; SwitchToMode "Normal"; }
+        bind "S" { ToggleActiveSyncTab; SwitchToMode "Normal"; }
+        bind "w" { ToggleFloatingPanes; SwitchToMode "Normal"; }
+
+        ////////// TABS \\\\\\\\\\
+
+        bind "1" { GoToTab 1; }
+        bind "2" { GoToTab 2; }
+        bind "3" { GoToTab 3; }
+        bind "4" { GoToTab 4; }
+        bind "5" { GoToTab 5; }
+        bind "6" { GoToTab 6; }
+        bind "7" { GoToTab 7; }
+        bind "8" { GoToTab 8; }
+        bind "9" { GoToTab 9; }
+        bind "Tab" { ToggleTab; SwitchToMode "Normal"; }
+        bind "n" { NewTab; SwitchToMode "Normal"; }
+
+        bind "b" { BreakPaneRight; SwitchToMode "Normal"; }
+        bind "B" { BreakPaneLeft; SwitchToMode "Normal"; }
+
+        bind "r" { SwitchToMode "RenameTab"; TabNameInput 0; }
+        bind "X" { CloseTab; SwitchToMode "Normal"; }
+
+        ////////// PANES \\\\\\\\\\
+
+        bind "R" { SwitchToMode "RenamePane"; PaneNameInput 0;}
+        bind "x" { CloseFocus; SwitchToMode "Normal"; }
+
+        bind "s" { NewPane "Down"; SwitchToMode "Normal"; }
+        bind "v" { NewPane "Right"; SwitchToMode "Normal"; }
+
+        bind "w" { ToggleFloatingPanes; SwitchToMode "Normal"; }
+        bind "e" { TogglePaneEmbedOrFloating; SwitchToMode "Normal"; }
+
+        bind "Alt h" { MoveFocusOrTab "Left"; }
+        bind "Alt l" { MoveFocusOrTab "Right"; }
+        bind "Alt j" { MoveFocus "Down"; }
+        bind "Alt k" { MoveFocus "Up"; }
+
+        bind "h" { Resize "Increase Left"; }
+        bind "j" { Resize "Increase Down"; }
+        bind "k" { Resize "Increase Up"; }
+        bind "l" { Resize "Increase Right"; }
+        bind "H" { Resize "Decrease Left"; }
+        bind "J" { Resize "Decrease Down"; }
+        bind "K" { Resize "Decrease Up"; }
+        bind "L" { Resize "Decrease Right"; }
+
+        bind "Ctrl h" "Left" { MovePane "Left"; }
+        bind "Ctrl j" "Down" { MovePane "Down"; }
+        bind "Ctrl k" "Up" { MovePane "Up"; }
+        bind "Ctrl l" "Right" { MovePane "Right"; }
+
+        ////////// SESSION \\\\\\\\\\
+
+        bind "Ctrl d" { Detach; }
+        bind "o" {
+            LaunchOrFocusPlugin "zellij:session-manager" {
+                floating true
+                    move_to_focused_tab true
+            };
+            SwitchToMode "Normal"
+        }
+
+    }
+
+     
+
+    ////////// SCROLL AND SEARCH MODES //////////
+    //// These modes are left as they were, /////
+    // with small adjustments to the bindings ///
+
+    scroll {
+        bind "Ctrl s" { SwitchToMode "Normal"; }
+        bind "e" { EditScrollback; SwitchToMode "Normal"; }
+        bind "s" { SwitchToMode "EnterSearch"; SearchInput 0; }
+        bind "Ctrl c" { ScrollToBottom; SwitchToMode "Normal"; }
+        bind "j" "Down" { ScrollDown; }
+        bind "k" "Up" { ScrollUp; }
+        bind "Ctrl f" "PageDown" "Right" "l" { PageScrollDown; }
+        bind "Ctrl b" "PageUp" "Left" "h" { PageScrollUp; }
+        bind "d" { HalfPageScrollDown; }
+        bind "u" { HalfPageScrollUp; }
+        // uncomment this and adjust key if using copy_on_select=false
+        // bind "Alt c" { Copy; }
+    }
+
+    search {
+        bind "Ctrl s" { SwitchToMode "Normal"; }
+        bind "Ctrl c" { ScrollToBottom; SwitchToMode "Normal"; }
+        bind "j" "Down" { ScrollDown; }
+        bind "k" "Up" { ScrollUp; }
+        bind "Ctrl f" "PageDown" "Right" "l" { PageScrollDown; }
+        bind "Ctrl b" "PageUp" "Left" "h" { PageScrollUp; }
+        bind "d" { HalfPageScrollDown; }
+        bind "u" { HalfPageScrollUp; }
+        bind "n" { Search "down"; }
+        bind "p" { Search "up"; }
+        bind "c" { SearchToggleOption "CaseSensitivity"; }
+        bind "w" { SearchToggleOption "Wrap"; }
+        bind "o" { SearchToggleOption "WholeWord"; }
+    }
+
+    entersearch {
+        bind "Ctrl c" "Esc" { SwitchToMode "Scroll"; }
+        bind "Enter" { SwitchToMode "Search"; }
+    }
+    renametab {
+        bind "Ctrl c" { SwitchToMode "Normal"; }
+        bind "Esc" { UndoRenameTab; SwitchToMode "Tab"; }
+    }
+    renamepane {
+        bind "Ctrl c" { SwitchToMode "Normal"; }
+        bind "Esc" { UndoRenamePane; SwitchToMode "Pane"; }
+    }
+
+
+    session {
+    // UNUSED 
+    }
+    resize {
+    // UNUSED
+    }
+    move { 
+    // UNUSED
+    }
+    pane {
+    // UNUSED
+    }
+    tab {
+    // UNUSED
+    }
+     
+    shared_except "locked" {
+        bind "Ctrl g" { SwitchToMode "Locked"; }
+
+        // TODO: Create swap layouts and binds to use them
+        // bind "Alt [" { PreviousSwapLayout; }
+        // bind "Alt ]" { NextSwapLayout; }
+    }
+    shared_except "normal" "locked" "pane" "tab" {
+        bind "Enter" "Esc" { SwitchToMode "Normal"; }
+    }
+    shared_except "tmux" "locked" {
+        bind "Ctrl b" { SwitchToMode "Tmux"; }
+    }
+}
+
+plugins {
+    tab-bar { path "tab-bar"; }
+    status-bar { path "status-bar"; }
+    strider { path "strider"; }
+    compact-bar { path "compact-bar"; }
+    session-manager { path "session-manager"; }
+}
+
+// Choose what to do when zellij receives SIGTERM, SIGINT, SIGQUIT or SIGHUP
+// eg. when terminal window with an active zellij session is closed
+// Options:
+//   - detach (Default)
+//   - quit
+//
+// on_force_close "quit"
+
+//  Send a request for a simplified ui (without arrow fonts) to plugins
+//  Options:
+//    - true
+//    - false (Default)
+//
+// simplified_ui true
+
+// Choose the path to the default shell that zellij will use for opening new panes
+// Default: $SHELL
+//
+// default_shell "fish"
+
+// Choose the path to override cwd that zellij will use for opening new panes
+//
+// default_cwd ""
+
+// Toggle between having pane frames around the panes
+// Options:
+//   - true (default)
+//   - false
+//
+pane_frames false
+
+ui {
+    pane_frames {
+        hide_session_name false
+    }
+}
+
+// Toggle between having Zellij lay out panes according to a predefined set of layouts whenever possible
+// Options:
+//   - true (default)
+//   - false
+//
+// auto_layout true
+
+// Whether sessions should be serialized to the cache folder (including their tabs/panes, cwds and running commands) so that they can later be resurrected
+// Options:
+//   - true (default)
+//   - false
+//
+// session_serialization false
+
+// Whether pane viewports are serialized along with the session, default is false
+// Options:
+//   - true
+//   - false (default)
+// serialize_pane_viewport true
+
+// Scrollback lines to serialize along with the pane viewport when serializing sessions, 0
+// defaults to the scrollback size. If this number is higher than the scrollback size, it will
+// also default to the scrollback size. This does nothing if `serialize_pane_viewport` is not true.
+//
+// scrollback_lines_to_serialize 10000
+
+// Choose the theme that is specified in the themes section.
+// Default: default
+//
+// theme "default"
+theme "everforest"
+
+// The name of the default layout to load on startup
+// Default: "default"
+//
+// default_layout "compact"
+
+// Choose the mode that zellij uses when starting up.
+// Default: normal
+//
+// default_mode "locked"
+
+// Toggle enabling the mouse mode.
+// On certain configurations, or terminals this could
+// potentially interfere with copying text.
+// Options:
+//   - true (default)
+//   - false
+//
+// mouse_mode false
+
+// Configure the scroll back buffer size
+// This is the number of lines zellij stores for each pane in the scroll back
+// buffer. Excess number of lines are discarded in a FIFO fashion.
+// Valid values: positive integers
+// Default value: 10000
+//
+// scroll_buffer_size 10000
+
+// Provide a command to execute when copying text. The text will be piped to
+// the stdin of the program to perform the copy. This can be used with
+// terminal emulators which do not support the OSC 52 ANSI control sequence
+// that will be used by default if this option is not set.
+// Examples:
+//
+// copy_command "xclip -selection clipboard" // x11
+// copy_command "wl-copy"                    // wayland
+// copy_command "pbcopy"                     // osx
+
+// Choose the destination for copied text
+// Allows using the primary selection buffer (on x11/wayland) instead of the system clipboard.
+// Does not apply when using copy_command.
+// Options:
+//   - system (default)
+//   - primary
+//
+// copy_clipboard "primary"
+
+// Enable or disable automatic copy (and clear) of selection when releasing mouse
+// Default: true
+//
+// copy_on_select false
+
+// Path to the default editor to use to edit pane scrollbuffer
+// Default: $EDITOR or $VISUAL
+//
+// scrollback_editor "/usr/bin/vim"
+
+// When attaching to an existing session with other users,
+// should the session be mirrored (true)
+// or should each user have their own cursor (false)
+// Default: false
+//
+// mirror_session true

@@ -4,5 +4,5 @@ normal = { family = "JetBrainsMonoNL Nerd Font", style = "Regular" }
 
 [window]
 blur = true
-opacity = 0.8
+opacity = 0.95
 
