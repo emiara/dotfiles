@@ -133,7 +133,8 @@ alias alacrittyrc="nvim ~/.config/alacritty/alacritty.toml && alacritty --restar
 alias swayrc="nvim ~/.config/sway/config && swaymsg reload"
 
 alias brewup="brew update && brew upgrade && brew cleanup && brew doctor && clear"
-alias update="sudo pacman -Syu && yay -Syu && clear"
+#alias update="sudo pacman -Syu && yay -Syu && clear"
+alias update="sudo zypper refresh && sudo zypper update"
 alias bye="systemctl hibernate"
 alias byebye="systemctl poweroff"
 alias neofetch="clear && neofetch"
