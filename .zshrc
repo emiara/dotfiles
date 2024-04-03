@@ -136,7 +136,6 @@ alias brewup="brew update && brew upgrade && brew cleanup && brew doctor && clea
 alias update="sudo pacman -Syu && yay -Syu && clear"
 alias bye="systemctl hibernate"
 alias byebye="systemctl poweroff"
-alias neofetch="clear && neofetch"
 alias nf="clear && neofetch"
 alias lg="lazygit"
 alias ta="tmux attach-session -t $(tmux list sessions | awk '{print $1}' | head -n 1) || tmux new-session"
