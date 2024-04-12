@@ -118,6 +118,7 @@ eval "$(zoxide init --cmd cd zsh)"
                       fi
 # Example aliases
 alias reset="echo FUCK YOU!"
+alias please="sudo"
 alias vim="nvim"
 alias svim="sudoedit"
 
@@ -135,6 +136,7 @@ alias swayrc="nvim ~/.config/sway/config && swaymsg reload"
 alias brewup="brew update && brew upgrade && brew cleanup && brew doctor && clear"
 #alias update="sudo pacman -Syu && yay -Syu && clear"
 alias update="sudo zypper refresh && sudo zypper update"
+alias mac="tmux new-session -As mac"
 alias bye="systemctl hibernate"
 alias byebye="systemctl poweroff"
 alias nf="clear && neofetch"
@@ -147,4 +149,6 @@ alias ll="lsd -l"
 alias l="lsd -Al" 
 alias tre="lsd --tree"
 neofetch
+
+
 
