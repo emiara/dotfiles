@@ -7,11 +7,15 @@ export ZSH="$HOME/.oh-my-zsh"
  # for macOS
 if [[ $(uname) == "Darwin" ]]; then
   export PATH=$PATH:/Users/emi/.local/bin/
+  export NVM_DIR="$HOME/.nvm"
+  [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+  [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 fi
 
 # for Linux
 if [[ $(uname) == "Linux" ]]; then
   export PATH=$PATH:/home/emiara/.local/bin/
+
 fi
 
 
@@ -33,7 +37,7 @@ ZSH_THEME="robbyrussell"
 
 # Uncomment one of the following lines to change the auto-update behavior
 # zstyle ':omz:update' mode disabled  # disable automatic updates
- zstyle ':omz:update' mode auto      # update automatically without asking
+ zstyle ':omz:update' mode reminder update automatically without asking
 # zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 
 # Uncomment the following line to change how often to auto-update (in days).
