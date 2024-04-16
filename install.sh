@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #/usr/bin/env bash
 
 pwd=$(pwd)
@@ -15,4 +16,4 @@ done
 echo "Sourcing tmux config"
 tmux source-file $pwd/tmux/.config/tmux/tmux.conf
 
-neofetch
+lazygit
