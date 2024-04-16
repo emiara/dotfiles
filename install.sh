@@ -9,7 +9,7 @@ Darwin*) OS=Mac ;;
 *) echo "Unsupported OS: $OS" && exit 1 ;;
 esac
 
-packages="git stow tmux lazygit zsh lsd neovim fzf btop "
+packages="git stow tmux lazygit zsh lsd neovim fzf btop ripgrep"
 
 install_linux_packages() {
   if command -v apt >/dev/null; then
