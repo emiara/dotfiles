@@ -38,7 +38,7 @@ while getopts "f" opt; do # f for fresh install
         f)
             case $OS in
             Linux) install_linux_packages;;
-            Mac) install_linux_packages;;
+            Mac) install_mac_packages;;
             esac
             ;;
         \?)
