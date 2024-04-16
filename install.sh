@@ -1,6 +1,11 @@
 #/usr/bin/env bash
 
 pwd=$(pwd)
+
+echo "Configuring git"
+git config --global user.name "Emilio Aranda"
+git config --global user.email "ara.emi44@gmail.com"
+git config --global init.defaultBranch main
 echo "Pulling latest changes from git"
 git pull
 
