@@ -71,7 +71,9 @@ done
 
 # To update and install tmux plugins: <leader> + U/I
 echo "Sourcing tmux config"
+tmux new-session -d -s temp
 tmux source-file $pwd/tmux/.config/tmux/tmux.conf
+tmux kill-session -t temp
 
 # Launching lazygit
 lazygit
