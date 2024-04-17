@@ -19,7 +19,7 @@ install_linux_packages() {
 	elif command -v pacman >/dev/null; then
 		sudo pacman -Syu --noconfirm $packages
 	elif command -v zypper >/dev/null; then
-		sudo zypper update -y && sudo zypper upgrade -y
+		sudo zypper update -y 
 		sudo zypper install -y $packages
 	else
 		echo "Package manager not supported. Install packages manually."
