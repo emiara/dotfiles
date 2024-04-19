@@ -11,6 +11,11 @@ esac
 
 packages="git stow tmux lazygit zsh lsd neovim fzf btop ripgrep"
 
+install_rust() {
+	echo "Installing rust via rustup"
+	curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+}
+
 install_linux_packages() {
 	if command -v apt >/dev/null; then
 		sudo apt update && sudo apt install -y $packages
@@ -19,7 +24,7 @@ install_linux_packages() {
 	elif command -v pacman >/dev/null; then
 		sudo pacman -Syu --noconfirm $packages
 	elif command -v zypper >/dev/null; then
-		sudo zypper update -y 
+		sudo zypper update -y
 		sudo zypper install -y $packages
 	else
 		echo "Package manager not supported. Install packages manually."
@@ -34,13 +39,14 @@ install_mac_packages() {
 }
 
 while getopts "f" opt; do # f for fresh install
-  echo "Installing packages"
+	echo "Installing packages"
 	case $opt in
 	f)
 		case $OS in
 		Linux) install_linux_packages ;;
 		Mac) install_mac_packages ;;
 		esac
+		install_rust
 		;;
 	\?)
 		echo "Invalid option: -$OPTARG" >&2
