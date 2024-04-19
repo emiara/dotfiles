@@ -4,6 +4,8 @@
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
+eval "$(zoxide init --cmd cd zsh)"
+
  # for macOS
 if [[ $(uname) == "Darwin" ]]; then
   export PATH=$PATH:/Users/emi/.local/bin/
@@ -114,7 +116,6 @@ bindkey -M vicmd v edit-command-line
 
 
 
-eval "$(zoxide init --cmd cd zsh)"
 
 # pyenv setup
  if command -v pyenv 1>/dev/null 2>&1; then
