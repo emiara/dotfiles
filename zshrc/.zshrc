@@ -17,7 +17,7 @@ fi
 # for Linux
 if [[ $(uname) == "Linux" ]]; then
   export PATH=$PATH:/home/emiara/.local/bin/
-
+  export PATH="$HOME/.cargo/bin:$PATH"
 fi
 
 
