@@ -21,6 +21,7 @@ install_oh_my_zsh() {
 
 }
 
+
 install_rust() {
   if command -v rustup >/dev/null; then
     echo "Rust is already installed"
@@ -47,6 +48,16 @@ install_linux_packages() {
 	fi
 }
 
+# Git configuration
+echo "Configuring git"
+git config --global user.name "Emilio Aranda"
+git config --global user.email "ara.emi44@gmail.com"
+git config --global init.defaultBranch main
+
+install_nvim_config() {
+  git clone git@github.com:emiara/nvim.git ~/.config/nvim/
+}
+
 install_mac_packages() {
 	command -v brew || /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 	brew install $packages
@@ -62,6 +73,7 @@ while getopts "f" opt; do # f for fresh install
 		esac
 		install_rust
     install_oh_my_zsh
+    install_nvim_config
 		;;
 	\?)
 		echo "Invalid option: -$OPTARG" >&2
@@ -69,12 +81,6 @@ while getopts "f" opt; do # f for fresh install
 		;;
 	esac
 done
-
-# Git configuration
-echo "Configuring git"
-git config --global user.name "Emilio Aranda"
-git config --global user.email "ara.emi44@gmail.com"
-git config --global init.defaultBranch main
 
 echo "Pulling latest changes from git"
 git pull
