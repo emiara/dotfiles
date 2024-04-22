@@ -12,6 +12,10 @@ esac
 packages="git stow tmux lazygit zsh lsd neovim fzf btop ripgrep"
 
 install_rust() {
+  if command -v rustup >/dev/null; then
+    echo "Rust is already installed"
+    return
+  fi
 	echo "Installing rust via rustup"
 	curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 }
