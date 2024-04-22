@@ -55,6 +55,11 @@ git config --global user.email "ara.emi44@gmail.com"
 git config --global init.defaultBranch main
 
 install_nvim_config() {
+  if [ -d ~/.config/nvim ]; then
+    echo "Neovim config already installed"
+    return
+  fi
+
   git clone git@github.com:emiara/nvim.git ~/.config/nvim/
 }
 
