@@ -10,6 +10,16 @@ Darwin*) OS=Mac ;;
 esac
 
 packages="git stow tmux lazygit zsh lsd neovim fzf btop ripgrep"
+install_oh_my_zsh() {
+  if command -v zsh >/dev/null; then
+    echo "Zsh is already installed"
+    return
+  fi
+  echo "Installing oh-my-zsh"
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+
+}
 
 install_rust() {
   if command -v rustup >/dev/null; then
@@ -51,6 +61,7 @@ while getopts "f" opt; do # f for fresh install
 		Mac) install_mac_packages ;;
 		esac
 		install_rust
+    install_oh_my_zsh
 		;;
 	\?)
 		echo "Invalid option: -$OPTARG" >&2
