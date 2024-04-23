@@ -1,7 +1,6 @@
 #/usr/bin/env bash
 
 pwd=$(pwd)
-
 # Detecting OS
 case "$(uname -s)" in
 Linux*) OS=Linux ;;
@@ -44,7 +43,6 @@ install_linux_packages() {
 		exit 1
 	fi
 }
-
 
 install_nvim_config() {
 	if [ -d ~/.config/nvim ]; then
