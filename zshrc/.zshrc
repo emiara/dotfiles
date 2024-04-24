@@ -39,7 +39,7 @@ ZSH_THEME="robbyrussell"
 
 # Uncomment one of the following lines to change the auto-update behavior
 # zstyle ':omz:update' mode disabled  # disable automatic updates
- zstyle ':omz:update' mode reminder update automatically without asking
+ zstyle ':omz:update' mode reminder   # update automatically without asking
 # zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 
 # Uncomment the following line to change how often to auto-update (in days).
@@ -124,15 +124,16 @@ bindkey -M vicmd v edit-command-line
 # Example aliases
 alias reset="echo FUCK YOU!"
 alias please="sudo"
+
 alias vim="nvim"
 alias svim="sudoedit"
+alias tmux="zellij"
 
 
 # RCs
 alias zshrc="nvim ~/.zshrc && source ~/.zshrc"
 alias vimrc="cd ~/.config/nvim/ && nvim ~/.config/nvim/init.lua && cd -"
 alias tmuxrc="nvim ~/.config/tmux/tmux.conf && tmux source-file ~/.config/tmux/tmux.conf"
-
 alias yabairc="nvim ~/.config/yabai/yabairc && yabai --restart-service"
 alias xkhdrc="nvim ~/.config/skhd/config"
 alias alacrittyrc="nvim ~/.config/alacritty/alacritty.toml && alacritty --restart-service"
