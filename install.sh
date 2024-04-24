@@ -1,7 +1,6 @@
 #/usr/bin/env bash
 
 pwd=$(pwd)
-
 # Detecting OS
 case "$(uname -s)" in
 Linux*) OS=Linux ;;
@@ -11,22 +10,19 @@ esac
 
 packages="git stow tmux lazygit zsh lsd neovim fzf btop ripgrep"
 install_oh_my_zsh() {
-  if command -v zsh >/dev/null; then
-    echo "Zsh is already installed"
-    return
-  fi
-  echo "Installing oh-my-zsh"
-  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
-
+	if command -v zsh >/dev/null; then
+		echo "Zsh is already installed"
+		return
+	fi
+	echo "Installing oh-my-zsh"
+	sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 }
 
-
 install_rust() {
-  if command -v rustup >/dev/null; then
-    echo "Rust is already installed"
-    return
-  fi
+	if command -v rustup >/dev/null; then
+		echo "Rust is already installed"
+		return
+	fi
 	echo "Installing rust via rustup"
 	curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 }
@@ -35,7 +31,7 @@ install_linux_packages() {
 	if command -v apt >/dev/null; then
 		sudo apt update && sudo apt install -y $packages
 	elif command -v dnf >/dev/null; then
-		sudo dnf install -y git curl zsh tmux vim
+		sudo dnf install -y $packages
 	elif command -v pacman >/dev/null; then
 		sudo pacman -Syu --noconfirm $packages
 	elif command -v zypper >/dev/null; then
@@ -48,19 +44,12 @@ install_linux_packages() {
 	fi
 }
 
-# Git configuration
-echo "Configuring git"
-git config --global user.name "Emilio Aranda"
-git config --global user.email "ara.emi44@gmail.com"
-git config --global init.defaultBranch main
-
 install_nvim_config() {
-  if [ -d ~/.config/nvim ]; then
-    echo "Neovim config already installed"
-    return
-  fi
-
-  git clone git@github.com:emiara/nvim.git ~/.config/nvim/
+	if [ -d ~/.config/nvim ]; then
+		echo "Neovim config already installed"
+		return
+	fi
+	git clone git@github.com:emiara/nvim.git ~/.config/nvim/
 }
 
 install_mac_packages() {
@@ -77,8 +66,8 @@ while getopts "f" opt; do # f for fresh install
 		Mac) install_mac_packages ;;
 		esac
 		install_rust
-    install_oh_my_zsh
-    install_nvim_config
+		install_oh_my_zsh
+		install_nvim_config
 		;;
 	\?)
 		echo "Invalid option: -$OPTARG" >&2
@@ -87,7 +76,13 @@ while getopts "f" opt; do # f for fresh install
 	esac
 done
 
+# Git configuration
+echo "Configuring git"
+git config --global user.name "Emilio Aranda"
+git config --global user.email "ara.emi44@gmail.com"
+git config --global init.defaultBranch main
 echo "Pulling latest changes from git"
+
 git pull
 echo "Updating submodules"
 git submodule update --init --recursive
