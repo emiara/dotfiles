@@ -1,7 +1,7 @@
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
-plugins=(docker)
+plugins=(docker zsh_autosuggestions)
 
 export CONDA_AUTO_ACTIVATE_BASE=false
 
