@@ -144,7 +144,6 @@ alias please="sudo"
 
 alias vim="nvim"
 alias svim="sudoedit"
-alias tmux="zellij"
 
 
 # RCs
