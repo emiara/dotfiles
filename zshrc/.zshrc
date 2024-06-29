@@ -1,7 +1,7 @@
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
-plugins=(docker)
+# plugins=(docker)
 
 export CONDA_AUTO_ACTIVATE_BASE=false
 
@@ -161,7 +161,7 @@ alias update="sudo zypper refresh && sudo zypper update"
 alias mac="tmux new-session -As mac"
 alias bye="systemctl hibernate"
 alias byebye="systemctl poweroff"
-alias nf="clear && neofetch"
+alias nf="clear && fastfetch"
 alias lg="lazygit"
 alias ta="tmux attach-session -t $(tmux list sessions | awk '{print $1}' | head -n 1) || tmux new-session"
 
@@ -170,7 +170,7 @@ alias ls="lsd"
 alias ll="lsd -l" 
 alias l="lsd -Al" 
 alias tre="lsd --tree"
-neofetch
+# neofetch
 
 
 
