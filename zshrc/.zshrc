@@ -175,3 +175,4 @@ alias tre="lsd --tree"
 
 
 
+export PATH="$HOME/.ghcup/bin:$PATH"
