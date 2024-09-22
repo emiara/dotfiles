@@ -3,7 +3,6 @@ export ZSH="$HOME/.oh-my-zsh"
 source $ZSH/oh-my-zsh.sh
 zstyle ':omz:update' mode reminder  # Update settings: auto, reminder, never
 
-ZSH_THEME=""
 plugins=(zsh-autosuggestions zsh-syntax-highlighting)
 
 
