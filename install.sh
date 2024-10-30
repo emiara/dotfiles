@@ -1,10 +1,62 @@
 #!/bin/bash
 
-# Loop through all directories in the current folder
-for dir in */ ; do
-    # Use stow to symlink the folder contents to the home directory
+# Update the system and install necessary packages
+echo "Updating system and installing necessary packages..."
+sudo pacman -Syu --noconfirm
+sudo pacman -S --needed --noconfirm \
+    zsh \
+    sway \
+    swaync \
+    waybar \
+    alacritty \
+    tmux \
+    hyprland \
+    stow \
+    git \
+    wget \
+    curl \
+    neovim \
+    unzip \
+    python-pip \
+    wl-clipboard \
+    ttf-font-awesome \
+    noto-fonts-emoji \
+    pavucontrol \
+    pulseaudio \
+    playerctl \
+    wlroots \
+    rofi \
+    mako \
+    grim \
+    slurp \
+    jq
+
+# Install swaync plugin (if not available through the main repository)
+if ! pacman -Qi swaync &> /dev/null; then
+    echo "Installing swaync from the AUR..."
+    git clone https://aur.archlinux.org/swaync.git
+    cd swaync
+    makepkg -si --noconfirm
+    cd ..
+fi
+
+# Stow the dotfiles into the home directory
+echo "Stowing dotfiles..."
+
+# Define directories for stow
+directories=("zshrc" "swaync" "waybar" "hypr" "alacritty" "tmux")
+
+for dir in "${directories[@]}"; do
     stow --target="$HOME" "$dir"
 done
 
-echo "Dotfiles have been successfully stowed to your home directory."
+echo "Dotfiles stowed successfully."
+
+# Set zsh as default shell
+if [ "$SHELL" != "/usr/bin/zsh" ]; then
+    echo "Changing default shell to zsh..."
+    chsh -s /usr/bin/zsh
+fi
+
+echo "Installation complete! Please reboot or log out and log back in."
 
