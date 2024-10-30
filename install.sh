@@ -41,7 +41,11 @@ sudo pacman -S --needed --noconfirm \
     mako \
     grim \
     slurp \
-    jq
+    jq \
+    starship \
+    zoxide \
+    rustup \
+    eza
 
 # Install swaync plugin (if not available through the main repository)
 if ! pacman -Qi swaync &> /dev/null; then
@@ -50,6 +54,15 @@ if ! pacman -Qi swaync &> /dev/null; then
     cd swaync
     makepkg -si --noconfirm
     cd ..
+fi
+
+# Install Oh My Zsh
+if [ ! -d "$HOME/.oh-my-zsh" ]; then
+    echo "Installing Oh My Zsh..."
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+    echo "Oh My Zsh installed."
+else
+    echo "Oh My Zsh is already installed."
 fi
 
 # Stow the dotfiles into the home directory
