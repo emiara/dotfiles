@@ -88,10 +88,9 @@ done
 echo "Dotfiles stowed successfully."
 
 # Set zsh as default shell
-if [ "$SHELL" != "/usr/bin/zsh" ]; then
+if [ "$SHELL" != "/usr/bin/zsh" ] && [ "$SHELL" != "/bin/zsh" ]; then
     echo "Changing default shell to zsh..."
-    chsh -s /usr/bin/zsh
+    chsh -s $(which zsh)
 fi
 
 echo "Installation complete! Please reboot or log out and log back in."
-

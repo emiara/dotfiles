@@ -27,6 +27,7 @@ alias tmuxrc="nvim ~/.config/tmux/tmux.conf && tmux source-file ~/.config/tmux/t
 alias alacrittyrc="nvim ~/.config/alacritty/alacritty.toml"
 alias hyprc="nvim ~/.config/hypr/"
 alias -g G='| grep'
+alias lg="lazygit"
 
 # Cargo
 . "$HOME/.cargo/env"
