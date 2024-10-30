@@ -59,7 +59,15 @@ fi
 # Install Oh My Zsh
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
     echo "Installing Oh My Zsh..."
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+
+    # Backup any existing .zshrc before Oh My Zsh modifies it
+    if [ -f "$HOME/.zshrc" ]; then
+        echo "Moving existing .zshrc to .zshrc.pre-dotfiles..."
+        mv "$HOME/.zshrc" "$HOME/.zshrc.pre-dotfiles"
+    fi
+
+    # Install Oh My Zsh without creating a new .zshrc file
+    RUNZSH=no KEEP_ZSHRC=yes sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
     echo "Oh My Zsh installed."
 else
     echo "Oh My Zsh is already installed."
