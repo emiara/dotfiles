@@ -1,4 +1,16 @@
 #!/bin/bash
+#
+# Check if in the correct directory
+if [ ! -f .gitmodules ]; then
+    echo ".gitmodules file not found. Please run this script from the root of your repository."
+    exit 1
+fi
+
+# Initialize and update git submodules
+echo "Initializing and updating git submodules..."
+git submodule init
+git submodule update --recursive --remote
+echo "Submodules initialized and updated."
 
 # Update the system and install necessary packages
 echo "Updating system and installing necessary packages..."
