@@ -26,6 +26,11 @@ alias zshrc="nvim ~/.zshrc && source ~/.zshrc"
 alias vimrc="cd ~/.config/nvim/ && nvim ~/.config/nvim/init.lua && cd -" # vimrc
 alias tmuxrc="nvim ~/.config/tmux/tmux.conf && tmux source-file ~/.config/tmux/tmux.conf" # tmuxrc
 
+alias lg="lazygit"
+
+# Ghc(i) added to $PATH
+export PATH="$HOME/.ghcup/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 
 # Python + Conda settings
 export CONDA_AUTO_ACTIVATE_BASE=false
